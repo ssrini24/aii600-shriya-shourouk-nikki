@@ -23,3 +23,7 @@ File Descriptions:
 ## Decision affected by the model
 
 Name who acts, and what they will do differently because of the prediction. Say which mistake costs more.
+
+The instructor of STAT 344-001 will use the model to decide whether a curve is needed for the final course grades and how many percentage points should be added. Instead of choosing a curve based on a rough estimate, the instructor can use the calculated class median after applying the grading policy and compare it to the target median in policy.csv. If the class median is below the target, the model will recommend a positive curve equal to the difference. If the median already meets or exceeds the target, no curve will be applied.
+
+The more costly mistake would be applying a curve that is too large, since this could inflate grades and make them less representative of student performance. However, applying too small a curve could also leave students below the intended grading target. The goal is to recommend the smallest nonnegative curve that brings the class median up to the target while keeping the grading process consistent and fair.

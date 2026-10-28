@@ -6,6 +6,8 @@ At most one page. Replace the prompts under each heading. Leave the headings.
 
 State the claim in one sentence. Then name the single quantity you will forecast or estimate, with its units and the time window.
 
+We expect that once the grading policy in policy.csv is applied to the gradebook, the class median course percentage for STAT 344-001 will fall below the policy’s target, so a curve will be needed. Applying the policy means weighting each category, dropping the lowest scores where allowed, applying late-day penalties, and leaving excused work out of the denominator. The single quantity we will estimate is the size of that curve in percentage points. This will be shown by the target median in policy.csv minus the observed class median, with a floor of zero so that no student’s grade goes down. The estimate covers final course grades for all 100 students (s001–s100) across all 19 assignments in the 15 weeks of the Fall 2025 semester.
+
 ## Data
 
 Name the source, the unit of observation, the sample size, the time span, and how the data were collected. Say how what you measure differs from the quantity the decision needs. Say whether the terms let you republish the files. A release asset is a republished copy. If the terms do not allow that, the files stay off GitHub and `data/README.md` gives the command that downloads them from the source.

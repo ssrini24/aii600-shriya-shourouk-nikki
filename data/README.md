@@ -32,16 +32,14 @@ Record a SHA-256 for each file. Replacing a file with `--clobber` does not show 
 shasum -a 256 data/your-file.csv
 ```
 
-Replace the lines below.
-
-- Source: We used Cursor to generate a Student Gradebook of a fictional course called STAT 344-001 (Fall 2025). It features 19 assignments for 100 students (s001-s100), 1,900 rows. Since this is not a real class and not a registrar export, it is free to republish onto GitHub with public access. 
+- Source: We used a synthetic class to test our project. We used Cursor to generate a Student Gradebook of a fictional course called STAT 344-001 (Fall 2025). It features 19 assignments for 100 students (s001-s100), 1,900 rows. Since this is not a real class and not a registrar export, it is free to republish onto GitHub with public access. 
 - Designated Files: 
     - gradebook.csv: Tracks student grades for the class based on the following columns: assignment_name, category, category_weight, drop_lowest, points_possible, points_earned, status, late_days, and week. Every row has the same course_id, so one run is one class.
     - policy.csv: Provides the rulesets for how assignments are graded A-F, drops on assignments, assignment weights, and late-day policies to determine if a curve should be applied. 
     - make_gradebook.py: recreates the initial state for the reader so that they can run the model on their own and see if it matches the output. 
 - SHA-256:
-    - gradebook.csv:
-    - policy.csv:
-    - make_gradebook.csv: 
+    - gradebook.csv:8b30b5d8950a7dfbc1c517f8f1c8997b3c1a165b0a77fdb6212905d0944c86d0  
+    - policy.csv: 606eaccb614cf7207f89a0c4a37664c18ed67055a0968f6321f14468c588351f
+    - make_gradebook.csv: 538fe52c42c257e6111537d0c0b9497a6f0a58fdd34538695f6413aa7967355a
 - Unit of observation, sample size, and time span.
 Each row is one student on one assignment. 

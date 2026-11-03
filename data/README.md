@@ -38,8 +38,8 @@ shasum -a 256 data/your-file.csv
     - policy.csv: Provides the rulesets for how assignments are graded A-F, drops on assignments, assignment weights, and late-day policies to determine if a curve should be applied. 
     - make_gradebook.py: recreates the initial state for the reader so that they can run the model on their own and see if it matches the output. 
 - SHA-256:
-    - gradebook.csv:8b30b5d8950a7dfbc1c517f8f1c8997b3c1a165b0a77fdb6212905d0944c86d0  
-    - policy.csv: 606eaccb614cf7207f89a0c4a37664c18ed67055a0968f6321f14468c588351f
-    - make_gradebook.csv: 538fe52c42c257e6111537d0c0b9497a6f0a58fdd34538695f6413aa7967355a
+    8b30b5d8950a7dfbc1c517f8f1c8997b3c1a165b0a77fdb6212905d0944c86d0  data/gradebook.csv 
+    606eaccb614cf7207f89a0c4a37664c18ed67055a0968f6321f14468c588351f  data/policy.csv
+    538fe52c42c257e6111537d0c0b9497a6f0a58fdd34538695f6413aa7967355a  data/make_gradebook.py
 - Unit of observation, sample size, and time span.
 Each row is one student on one assignment. 

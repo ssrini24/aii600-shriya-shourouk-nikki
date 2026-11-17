@@ -8,3 +8,5 @@ This file is the history of the project. Append an entry when a choice changes t
 - Why. The evidence.
 - Alternative. What you rejected.
 - Revisit. What would change the choice.
+
+- Split: train = weeks <= 9, held out = weeks > 9. Time-based split, no random draw.

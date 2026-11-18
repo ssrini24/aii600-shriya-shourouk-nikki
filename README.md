@@ -6,7 +6,29 @@ Follow the [final project lab](https://vsokolov.org/labs/final-project-lab.html)
 
 ## Who
 
-Shourouk, Nikki, Shriya Srinivasan
+Shourouk Dassouki (`shdassouki`), Nikki Nasseri (`nikkinasseri`), Shriya Srinivasan (`ssrini24`)
+
+## Preliminary results (18 November 2026)
+
+The notebook predicts the **nonnegative final-course grade curve in percentage points at
+the end of week 9**, then checks that forecast against the completed synthetic course.
+It uses the partial-pooling assignment model developed by Nikki, the weighted-grade and
+drop-lowest equations documented by Shriya, and a separate tested policy calculation.
+The 80% target is an *illustrative decision scenario* based on the published B-minus
+cutoff; the dataset does **not** specify an instructor-approved target class median.
+
+To reproduce the results, use Python 3.12.14, install `requirements.txt`, and download
+the three files from the public [data release](https://github.com/ssrini24/aii600-shriya-shourouk-nikki/releases/tag/data)
+into `data/` (the CSVs and generator are intentionally not committed). Then run
+`analysis.ipynb` from top to bottom. Its first cell checks all three SHA-256 hashes;
+`python -m unittest discover -s tests -v` checks the policy rules. Plots are saved to
+`fig/`. The historical assignment-score MAEs in `decisions.md` were calculated without
+late penalties or excused-grade exclusions; the revised comparison uses the published
+policy and also scores the **curve**, which is the unit the instructor acts on.
+
+**AI disclosure:** The team used Cursor and ChatGPT for generating synthetic example
+data, drafting plot/checksum code, reconciling notebook branches, grade-policy coding,
+unit tests, and language editing; the team remains responsible for validating results.
 
 ## Fork
 

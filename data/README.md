@@ -2,28 +2,29 @@
 
 The files the notebook reads are not committed. When the terms let you republish them, they are assets on the GitHub release tagged `data`. The release is public. When the terms let you download the files but not republish them, do not create that release. Write the command that downloads them from the source, and say what it needs (an account, a key in `.env`, a path).
 
-`OWNER/REPO` is your fork, the form `username/aii600-final-project`. In the clone, once:
+The existing public release is at [data](https://github.com/ssrini24/aii600-shriya-shourouk-nikki/releases/tag/data).
+`OWNER/REPO` for this fork is `ssrini24/aii600-shriya-shourouk-nikki`. In the clone, once:
 
 ```bash
-gh repo set-default OWNER/REPO
+gh repo set-default ssrini24/aii600-shriya-shourouk-nikki
 ```
 
 Create the release from the project root, after the files are in this folder:
 
 ```bash
-gh release create data data/your-file.csv --repo OWNER/REPO --title "Data" --notes "See data/README.md"
+gh release create data data/gradebook.csv data/policy.csv data/make_gradebook.py --repo ssrini24/aii600-shriya-shourouk-nikki --title "Data" --notes "See data/README.md"
 ```
 
 Add every file the notebook reads. When a file changes:
 
 ```bash
-gh release upload data data/your-file.csv --repo OWNER/REPO --clobber
+gh release upload data data/your-file.csv --repo ssrini24/aii600-shriya-shourouk-nikki --clobber
 ```
 
 On another machine:
 
 ```bash
-gh release download data --dir data --repo OWNER/REPO
+gh release download data --dir data --repo ssrini24/aii600-shriya-shourouk-nikki
 ```
 
 Record a SHA-256 for each file. Replacing a file with `--clobber` does not show up in git, so update the hash in the same commit:
@@ -36,7 +37,13 @@ shasum -a 256 data/your-file.csv
 - Designated Files: 
     - gradebook.csv: Tracks student grades for the class based on the following columns: assignment_name, category, category_weight, drop_lowest, points_possible, points_earned, status, late_days, and week. Every row has the same course_id, so one run is one class.
     - policy.csv: Provides the rulesets for how assignments are graded A-F, drops on assignments, assignment weights, and late-day policies to determine if a curve should be applied. 
-    - make_gradebook.py: recreates the initial state for the reader so that they can run the model on their own and see if it matches the output. 
+    - make_gradebook.py: recreates the initial state for the reader so that they can run the model on their own and see if it matches the output.
+
+The policy defines a 10-percentage-point-per-day late penalty on homework/projects
+(maximum three days), one drop from homework and quiz, and excludes excused work. It
+**does not prescribe a missing-work score or a target class median**. For the preliminary
+experiment we explicitly assume missing=0 and a target of 80% (the B-minus cutoff);
+these are analyst choices to confirm with the instructor, not facts from `policy.csv`.
 - SHA-256:
     8b30b5d8950a7dfbc1c517f8f1c8997b3c1a165b0a77fdb6212905d0944c86d0  data/gradebook.csv 
     606eaccb614cf7207f89a0c4a37664c18ed67055a0968f6321f14468c588351f  data/policy.csv

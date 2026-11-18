@@ -11,9 +11,9 @@ This file is the history of the project. Append an entry when a choice changes t
 ## 2026-11-18: initial configuration
 
 - Decision. Python 3.9.6 with pandas 2.3.3, numpy 2.0.2 and matplotlib, pinned in `requirements.txt` and `.python-version`. Each file in `data/` is checked against the SHA-256 in `data/README.md` before fitting.
-- Why. Pinned versions and the hash check mean anyone who reruns the notebook gets the same code and data. `make_gradebook.py` has no SHA-256 in `data/README.md`, so only `gradebook.csv` and `policy.csv` are checked. No result depends on a random draw, so no seed is recorded.
+- Why. Pinned versions and the hash check mean anyone who reruns the notebook gets the same code and data. All three files in `data/` (gradebook.csv, policy.csv, make_gradebook.py) are checked against their SHA-256. No result depends on a random draw, so no seed is recorded.
 - Alternative. R with `renv.lock`. Rejected because the analysis is in Python.
-- Revisit. If `data/README.md` adds a hash for `make_gradebook.py`, or the data release changes.
+- Revisit. If the data release changes or any SHA-256 in `data/README.md` no longer matches.
 
 ## 2026-11-18: time-based split
 
